@@ -1,0 +1,262 @@
+
+.App {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+
+.dark-mode {
+    background-color: #424242;
+    color: #f0f0f0;
+}
+
+.new{
+    margin-right: 70px;
+}
+header {
+    /* margin-right: 5%; */
+    display: flex;
+    justify-content: space-between;
+    /* Aligns header items with space between */
+    align-items: center;
+    /* Vertically centers items */
+    padding: 0 20px;
+    /* Optional: adds some padding on the sides */
+    /* background-color: #f0f0f0; */
+    /* Optional: background color for visibility */
+}
+
+nav {
+    flex: 1;
+    /* Allows nav to take up available space */
+    display: flex;
+    justify-content: center;
+    /* Centers the content horizontally */
+}
+
+nav a {
+    text-decoration: none;
+    /* Removes underline from the link */
+    color: #333;
+    /* Sets link color */
+    font-size: 1.2em;
+    /* Optional: adjusts font size */
+    padding: 10px;
+    /* Optional: adds some padding around the link */
+}
+.dark-mode header {
+    background-color: 1e1e1e;
+    /* box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1); */
+}
+
+nav a {
+    margin-right: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ff4757;
+}
+
+/* Hero section styles */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 5%;
+    background-color: #e6f3ff;
+}
+
+.dark-mode .hero {
+    background-color: #1a1a1a;
+}
+
+h1 {
+    color: #ff4757;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+
+.user-section {
+    margin-right: 5%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Switch styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(24px);
+}
+
+/* CTA button styles */
+.cta-button {
+    background-color: #ff4757;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #ff2e43;
+}
+
+/* Quiz topics styles */
+.quiz-topics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 5%;
+    background-color: #f9f9f9;
+}
+
+.dark-mode .quiz-topics {
+    background-color: #2a2a2a;
+}
+
+.topics-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.topics-content li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.topics-content li::before {
+    content: "✓";
+    color: #2ecc71;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav {
+        margin-top: 1rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0.5rem;
+    }
+
+    .hero,
+    .quiz-topics {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .user-section {
+        margin-top: 1rem;
+        justify-content: center;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .topics-content {
+        width: 100%;
+    }
+
+    .topics-content ul {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero,
+    .quiz-topics {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .cta-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+
+    .switch {
+        width: 40px;
+        height: 22px;
+    }
+
+    .slider:before {
+        height: 16px;
+        width: 16px;
+    }
+
+    input:checked+.slider:before {
+        transform: translateX(18px);
+    }
+}
